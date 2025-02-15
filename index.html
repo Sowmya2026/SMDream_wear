@@ -3,51 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="SSS.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>SMDreamwear</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <div class="glow">
-        <h1>SMDreamwear</h1>
-    </div>
-
-    <!-- Navbar with Dropdown Icon -->
-    <div class="navbar">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">SMDreamwear</div>
         <div class="menu-icon" onclick="toggleMenu()">
             <i class="fa fa-bars"></i>
         </div>
         <div class="nav-links" id="nav-links">
-            <a href="dream.html"><i class="fa fa-home"></i> Home</a>
-            <a href="SF.html"><i class="fa fa-tshirt"></i> Self Fashion</a>
-            <a href="DD.html"><i class="fa fa-star"></i> Designed Fashion</a>
-            <a href="signup.html"><i class="fa fa-user-plus"></i> Sign-up</a>
-            <a href="login.html"><i class="fa fa-sign-in"></i> Login</a>
+            <a href="#">Home</a>
+            <a href="#">Collections</a>
+            <a href="#">Customize</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
         </div>
-    </div>
+    </nav>
 
-    <!-- Advanced Slideshow -->
-    <div class="slideshow-container">
-        <div class="mySlides fade">
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Elevate Your Fashion</h1>
+            <p>Design, Customize, and Wear Your Dream</p>
+            <button class="hero-btn">Explore Now</button>
+        </div>
+    </header>
+
+    <!-- Slideshow Section -->
+    <section class="slideshow-container">
+        <div class="slide fade">
             <img src="image1.jpg" alt="Fashion 1">
-            <div class="slide-text">Exclusive Fashion Wear</div>
+            <div class="slide-text">Luxury & Style</div>
         </div>
-
-        <div class="mySlides fade">
+        <div class="slide fade">
             <img src="image2.jpg" alt="Fashion 2">
-            <div class="slide-text">Customized to Your Style</div>
+            <div class="slide-text">Customizable Designs</div>
         </div>
-
-        <div class="mySlides fade">
+        <div class="slide fade">
             <img src="image3.jpg" alt="Fashion 3">
-            <div class="slide-text">Trendsetting Designs</div>
+            <div class="slide-text">Trendsetting Outfits</div>
         </div>
-
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <i class="fa fa-paint-brush"></i>
+            <h3>Unique Designs</h3>
+            <p>Personalize every aspect of your outfit.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa fa-star"></i>
+            <h3>Premium Quality</h3>
+            <p>Crafted with high-quality fabrics.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa fa-truck"></i>
+            <h3>Fast Delivery</h3>
+            <p>Get your custom outfit delivered fast.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 SMDreamwear. All Rights Reserved.</p>
+    </footer>
 
     <!-- JavaScript for Navbar & Slideshow -->
     <script>
@@ -60,14 +86,14 @@
         showSlides();
 
         function showSlides() {
-            let slides = document.getElementsByClassName("mySlides");
+            let slides = document.getElementsByClassName("slide");
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
             slideIndex++;
             if (slideIndex > slides.length) { slideIndex = 1 }
             slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
+            setTimeout(showSlides, 3000);
         }
     </script>
 
