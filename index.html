@@ -2,100 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SMDreamwear</title>
-    <link rel="stylesheet" type="text/css" href="SSS.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMDreamwear - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">SMDreamwear</div>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <i class="fa fa-bars"></i>
-        </div>
-        <div class="nav-links" id="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Collections</a>
-            <a href="#">Customize</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-text">
-            <h1>Elevate Your Fashion</h1>
-            <p>Design, Customize, and Wear Your Dream</p>
-            <button class="hero-btn">Explore Now</button>
-        </div>
+    <header>
+        <nav>
+            <h1>SMDreamwear</h1>
+            <div class="menu-toggle">&#9776;</div>
+            <ul>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#customize" class="cta">Start Designing</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Slideshow Section -->
-    <section class="slideshow-container">
-        <div class="slide fade">
-            <img src="SMDreamwear/im7.jpeg" alt="Fashion 1">
-            <div class="slide-text">Luxury & Style</div>
-        </div>
-        <div class="slide fade">
-            <img src="SMDreamwear/im3.jpeg" alt="Fashion 2">
-            <div class="slide-text">Customizable Designs</div>
-        </div>
-        <div class="slide fade">
-            <img src="SMDreamwear/im5.jpeg" alt="Fashion 3">
-            <div class="slide-text">Trendsetting Outfits</div>
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <section id="hero" style="background-image: url('SMDreamwear/Atelier.jpeg');">
+        <h2>The New Cindy Collection is Live!</h2>
+        <p>Discover exclusive designs tailored for you.</p>
+        <a href="#collections" class="cta">Shop Now</a>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="feature-card">
-            <i class="fa fa-paint-brush"></i>
-            <h3>Unique Designs</h3>
-            <p>Personalize every aspect of your outfit.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fa fa-star"></i>
-            <h3>Premium Quality</h3>
-            <p>Crafted with high-quality fabrics.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fa fa-truck"></i>
-            <h3>Fast Delivery</h3>
-            <p>Get your custom outfit delivered fast.</p>
+    <section id="welcome">
+        <div class="welcome-container">
+            
+            <div class="image-stack">
+                <img src="SMDreamwear/im4.jpeg" alt="Fashion Model" class="top-image">
+                <img src="SMDreamwear/im3.jpeg" alt="Elegant Fashion" class="bottom-image">
+            </div>
+            <div class="welcome-text">
+                <h2>Welcome to SMDreamwear</h2>
+                <p>Design your dream dress with custom fabrics, neck styles, and more. Create a unique look effortlessly.</p>
+                <a href="#our-mission" class="cta">Explore Our Mission</a>
+            </div>
         </div>
     </section>
+    
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 SMDreamwear. All Rights Reserved.</p>
+   <!-- Collections Section -->
+<section id="collections">
+    <h2>Our Latest Dress Collections</h2>
+    <div class="collections-grid">
+        <div class="collection-card">
+            <img src="SMDreamwear/im1.jpeg" alt="Elegant Gown">
+            <div class="collection-info">
+                <h3>Elegant Gown</h3>
+                <p>$120</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="collection-card">
+            <img src="SMDreamwear/im2.jpeg" alt="Silk Saree">
+            <div class="collection-info">
+                <h3>Silk Saree</h3>
+                <p>$150</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="collection-card">
+            <img src="SMDreamwear/im3.jpeg" alt="Party Dress">
+            <div class="collection-info">
+                <h3>Party Dress</h3>
+                <p>$100</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="collection-card">
+            <img src="SMDreamwear/im4.jpeg" alt="Summer Dress">
+            <div class="collection-info">
+                <h3>Summer Dress</h3>
+                <p>$90</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="on-sale" style="background-image: url('im6.jpeg.jpg');">
+    <h2>On Sale</h2>
+    <a href="#shop-now" class="cta">Shop Now</a>
+</section>
+
+<!-- Feedback Section -->
+<section id="feedback-section">
+    <div class="feedback-container">
+        <div class="feedback-image">
+            <img src="SMDreamwear/im1.jpeg" alt="Feedback Image">
+        </div>
+        <div class="feedback-content">
+            <h2>Share Your Experience</h2>
+            <p>We value your feedback. Let us know your thoughts!</p>
+            <form id="feedback-form">
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="input-group">
+                    <select id="rating" required>
+                        <option value="">Select Rating</option>
+                        <option value="★★★★★">★★★★★ - Excellent</option>
+                        <option value="★★★★☆">★★★★☆ - Very Good</option>
+                        <option value="★★★☆☆">★★★☆☆ - Good</option>
+                        <option value="★★☆☆☆">★★☆☆☆ - Fair</option>
+                        <option value="★☆☆☆☆">★☆☆☆☆ - Poor</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <textarea id="feedback" placeholder="Write your feedback here..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Reviews Section -->
+<section id="reviews-section">
+    <h2>What Our Users Say</h2>
+    <div class="reviews-slider">
+        <div class="reviews-container" id="reviews-container">
+            <!-- Dynamically added reviews will slide here -->
+        </div>
+    </div>
+</section>
+
+
+    <footer id="contact">
+        <p>Contact us at support@smdreamwear.com</p>
     </footer>
-
-    <!-- JavaScript for Navbar & Slideshow -->
-    <script>
-        function toggleMenu() {
-            let menu = document.getElementById("nav-links");
-            menu.classList.toggle("show");
-        }
-
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let slides = document.getElementsByClassName("slide");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 3000);
-        }
-    </script>
-
 </body>
 </html>
