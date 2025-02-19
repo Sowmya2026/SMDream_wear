@@ -1,173 +1,798 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap');
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Poppins:wght@300;400;600&display=swap');
 
-* {
-    box-sizing: border-box;
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    background-color: #FAF4F2;
+    color: #5A3E36;
 }
 
-/* Body with Gradient Background */
-body {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #3E2723, #5A3E36); /* Deep luxury tones */
+    z-index: 1000;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 14px 0;
 }
 
-/* Navbar */
-.navbar {
+/* Navigation Bar */
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 105, 180, 0.9);
-    padding: 15px 20px;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 15px 5%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+/* Brand Name */
+nav h1 {
+    font-family: 'Grechen Fuemen', cursive;
+    font-size: 28px;
+    color: #ffffff;
+    margin: 0;
 }
 
-.menu-icon {
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.nav-links {
-    display: none;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    border-radius: 10px;
-}
-
-.nav-links a {
-    color: white;
-    padding: 12px;
-    text-decoration: none;
-    display: block;
-    transition: 0.3s ease-in-out;
-}
-
-.nav-links a:hover {
-    background: #ff66b2;
-}
-
-.show {
+/* Navigation Menu */
+nav ul {
+    list-style: none;
     display: flex;
+    align-items: center;  /* Fix alignment */
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu Items */
+nav ul li {
+    display: inline-block;
+}
+
+/* Links Styling */
+nav ul li a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+/* Underline Effect on Hover */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    background-color: #B87C66;
+}
+
+/* Stylish CTA - Instead of Box */
+nav ul li .cta {
+    display: inline-block;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: #B87C66;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+/* CTA Underline Effect */
+nav ul li .cta::after {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, #B87C66, #8B5E4C);
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+}
+
+nav ul li .cta:hover::after {
+    transform: scaleX(1);
+}
+
+/* Mobile Navigation (Hamburger Menu) */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #5A3E36;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #E5D2C0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
 }
 
 /* Hero Section */
-.hero {
-    height: 400px;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+#hero {
+    position: relative;
+    background-image: url('Atelier.jpeg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 120px 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: white;
 }
 
-.hero-text h1 {
-    font-size: 40px;
-}
-
-.hero-btn {
-    padding: 10px 20px;
-    background: white;
-    color: #ff66b2;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.hero-btn:hover {
-    background: #ff33cc;
-    color: white;
-}
-
-/* Slideshow */
-.slideshow-container {
-    max-width: 900px;
-    margin: auto;
-    position: relative;
-    border-radius: 10px;
-}
-
-.slide {
-    display: none;
-    position: relative;
-}
-
-.slide img {
+/* White Background Overlay */
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    border-radius: 10px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); /* Soft white overlay */
+    z-index: 1;
 }
 
-.slide-text {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 10px;
+/* Hero Text */
+#hero h2, #hero p, #hero .cta {
+    position: relative;
+    z-index: 2;
 }
 
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px;
+#hero h2 {
+    font-family: 'Grechen Fuemen', cursive;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #5A3E36; /* Elegant brown */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#hero p {
+    font-family: 'Playfair Display', serif; /* Elegant font */
     font-size: 18px;
-    background: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #5A3E36;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ribbon Style Call-To-Action Button */
+#hero .cta {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
     color: white;
+    text-decoration: none;
+    padding: 14px 35px;
+    display: inline-block;
+    background: linear-gradient(135deg, #B87C66, #5A3E36);
+    clip-path: polygon(0% 0%, 92% 0%, 100% 50%, 92% 100%, 0% 100%);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Hover Effect - Floating & Color Change */
+#hero .cta:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: linear-gradient(135deg, #5A3E36, #B87C66);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animated Ripple Effect */
+#hero .cta::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: opacity 0.5s ease, transform 0.5s ease;
     border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
-
-.prev:hover, .next:hover {
-    background: rgba(255, 255, 255, 0.6);
-    color: black;
+#hero .cta:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
 }
 
-/* Features */
-.features {
+/* Responsive Design */
+@media (max-width: 768px) {
+    #hero p {
+        font-size: 16px;
+    }
+
+    #hero .cta {
+        font-size: 16px;
+        padding: 12px 30px;
+        clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
+    }
+}
+
+
+/* Welcome Section */
+#welcome {
+    padding: 60px 5%;
+    background-color: #D8BBA2;
+}
+
+.welcome-container {
     display: flex;
+    align-items: center;
+    gap: 20px;
     justify-content: center;
     padding: 40px;
-    gap: 20px;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
-.feature-card {
+/* Image Stack */
+.image-stack {
+    position: relative;
+    width: 300px; /* Adjust based on design */
+    height: auto;
+}
+
+.image-stack img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.top-image {
+    right: 150px;
+    position: relative;
+    z-index: 1;
+    border: 5px solid white;
+}
+
+.bottom-image {
+    position: relative;
+    z-index: 1;
+    position: absolute;
+    top: -50px; /* Adjust overlap */
+    left: 20px; /* Adjust for visual effect */
+    z-index: 2;
+    border: 5px solid white; /* Optional border */
+}
+
+/* Welcome Text */
+.welcome-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
     text-align: center;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+    padding-left: 100px;
 }
 
-.feature-card i {
-    font-size: 40px;
-    color: #ff66b2;
+.welcome-text h2 {
+    font-size: 36px;
+    font-family: 'Grechen Fuemen', cursive;
+    color: #5A3E36;
+    margin-bottom: 15px;
+}
+
+/* Updated Paragraph Style */
+.welcome-text p {
+    font-size: 18px;
+    color: #5A3E36;
+    font-family: 'Playfair Display', serif; /* Elegant and stylish font */
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Ribbon Style CTA */
+.welcome-text .cta {
+    background: linear-gradient(135deg, #B87C66, #5A3E36);
+    color: white;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 35px;
+    position: relative;
+    display: inline-block;
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect - Floating & Color Change */
+.welcome-text .cta:hover {
+    background: linear-gradient(135deg, #5A3E36, #B87C66);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .welcome-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-stack {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .top-image {
+        top: -20px;
+        left: 10px;
+    }
+
+    .welcome-text .cta {
+        font-size: 16px;
+        padding: 10px 25px;
+        clip-path: polygon(0% 0%, 92% 0%, 100% 50%, 92% 100%, 0% 100%);
+    }
+}
+
+
+/* === COLLECTIONS SECTION === */
+#collections {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f7f1ea; /* Light brown background */
+}
+
+#collections h2 {
+    font-size: 30px;
+    color: #5a3e36; /* Dark brown */
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    margin-bottom: 25px;
+}
+
+/* Modern Collection Grid */
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Collection Cards */
+.collection-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 16px rgba(90, 62, 54, 0.2);
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.collection-card img {
+    width: 100%;
+    height: 320px; /* Fixed height */
+    object-fit: cover; /* Ensures consistent image sizing */
+    border-radius: 12px 12px 0 0;
+}
+
+/* Overlay Effect for Info */
+.collection-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(90, 62, 54, 0.9); /* Semi-transparent brown */
+    color: white;
+    padding: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+.collection-card:hover .collection-info {
+    background: rgba(90, 62, 54, 1); /* Darker brown on hover */
+}
+
+/* Unique Styling for Text */
+.collection-info h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.collection-info p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f4d1b8; /* Soft beige shade */
+    margin-bottom: 5px;
+}
+
+/* === Ribbon-Style Add to Cart Button === */
+.add-to-cart {
+    display: inline-block;
+    background: linear-gradient(135deg, #8a5a3d, #c69774); /* Gradient brown */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+/* Left & Right Ribbon Edges */
+.add-to-cart::before,
+.add-to-cart::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: 15px;
+    height: 10px;
+    background: #6b3f2b; /* Dark brown */
+}
+
+.add-to-cart::before {
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.add-to-cart::after {
+    right: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+/* Hover Effect */
+.add-to-cart:hover {
+    background: linear-gradient(135deg, #6b3f2b, #9c6d52);
+    transform: scale(1.05);
+}
+
+
+/* Hover Effect */
+.collection-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 8px 20px rgba(90, 62, 54, 0.25);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .collections-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .collection-card img {
+        height: 280px;
+    }
+    .collection-info h3 {
+        font-size: 18px;
+    }
+    .collection-info p {
+        font-size: 16px;
+    }
+}
+
+
+/* === Feedback Section === */
+#feedback-section {
+    background: #4A3228;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedback-container {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    background: #3A231C;
+    color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    gap: 30px;
+}
+
+/* Image Styling */
+.feedback-image img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Content Styling */
+.feedback-content {
+    flex: 1;
+    text-align: left;
+}
+
+.feedback-content h2 {
+    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+.feedback-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Placeholder Styling */
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+    border-color: #d4a373;
+    outline: none;
+}
+
+/* Button */
+.submit-btn {
+    background: #d4a373;
+    color: #3A231C;
+    font-size: 18px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #c08c5f;
+}
+
+/* === Reviews Section === */
+#reviews-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#reviews-section h2 {
+    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+    color: #5A3E36;
+    margin-bottom: 20px;
+}
+
+/* === Review Slider Section === */
+.reviews-slider {
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    white-space: nowrap;
+    position: relative;
+}
+
+.reviews-container {
+    display: flex;
+    gap: 20px;
+    width: max-content; /* Ensure it expands infinitely */
+    transition: transform 0.1s linear;
+}
+
+/* Individual Review Cards */
+.review {
+    display: inline-block;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 300px; /* Fixed width for scrolling */
+    text-align: center;
+    white-space: normal;
+}
+
+.review strong {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4A4E69;
+}
+
+.stars {
+    color: gold;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+
+/* === Animations === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.input-group input, .input-group textarea, .input-group select {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .feedback-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feedback-image img {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Testimonials */
+#testimonials {
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.testimonial-slider {
+    background-color: #E5D2C0;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Grechen Fuemen', cursive;
+    font-style: italic;
 }
 
 /* Footer */
-.footer {
-    text-align: center;
-    background: #333;
+footer {
+    background-color: #5A3E36;
     color: white;
-    padding: 10px;
-    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #E5D2C0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .welcome-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .welcome-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .collection-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+/* On Sale Section */
+#on-sale {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 10px 5%;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#on-sale h2 {
+    color: #5A3E36;
+    font-size: 42px;
+    font-family: 'Grechen Fuemen', cursive;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Ribbon Style CTA */
+#on-sale .cta {
+    background: linear-gradient(135deg, #B87C66, #5A3E36);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 30px;
+    position: relative;
+    display: inline-block;
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect - Floating & Color Change */
+#on-sale .cta:hover {
+    background: linear-gradient(135deg, #5A3E36, #B87C66);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #on-sale .cta {
+        font-size: 16px;
+        padding: 10px 25px;
+        clip-path: polygon(0% 0%, 92% 0%, 100% 50%, 92% 100%, 0% 100%);
+    }
 }
